@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes" ?>
+<tareas  xmlns:has="http://ji.ehu.es/has">
+  <tarea>
+    <Codigo>HAS16-Test5</Codigo>
+    <Descripcion>Test 5 de la asignatura</Descripcion>
+    <HEstimadas>1</HEstimadas>
+    <explotacion>false</explotacion>
+    <tipotarea>examen</tipotarea>
+  </tarea>
+  <tarea>
+    <Codigo>HAS16-Lab12</Codigo>
+    <Descripcion>Laboratorio 12 de la asignatura</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <explotacion>true</explotacion>
+    <tipotarea>Laboratorio</tipotarea>
+  </tarea>
+</tareas>
