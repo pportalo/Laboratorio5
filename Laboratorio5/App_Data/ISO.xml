@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<tareas  xmlns:iso="http://ji.ehu.es/iso">
+  <tarea>
+    <Codigo>ISO16-Test1</Codigo>
+    <Descripcion>Test 1 sobre conceptos generales</Descripcion>
+    <HEstimadas>3</HEstimadas>
+    <explotacion>false</explotacion>
+    <tipotarea>Examen</tipotarea>
+  
+</tarea>
+  <tarea>
+    <Codigo>ISO16-Trabajo20</Codigo>
+    <Descripcion>Cookies y Sesiones</Descripcion>
+    <HEstimadas>10</HEstimadas>
+    <explotacion>false</explotacion>
+    <tipotarea>Trabajo</tipotarea>
+  
+</tarea>
+</tareas>
