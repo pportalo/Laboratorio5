@@ -34,7 +34,7 @@ Public Class TareasAlumno
             End If
 
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
     End Sub
 
@@ -96,6 +96,6 @@ Public Class TareasAlumno
     End Sub
 
     Protected Sub Button1_Click1(sender As Object, e As EventArgs) Handles Button1.Click
-        Response.Redirect("/Alumno.aspx")
+        Response.Redirect("Alumno.aspx")
     End Sub
 End Class

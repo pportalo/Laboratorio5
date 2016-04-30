@@ -5,7 +5,7 @@
         If Session("usuario") IsNot Nothing Then
 
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
     End Sub
 
@@ -13,7 +13,7 @@
         Session("usuario") = Nothing
         Session("dataSet") = Nothing
         Session("dataAdapter") = Nothing
-        Response.Redirect("/inicio.aspx")
+        Response.Redirect("../inicio.aspx")
     End Sub
 
     Protected Sub boton_Click(sender As Object, e As EventArgs) Handles boton.Click

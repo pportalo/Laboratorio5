@@ -28,7 +28,7 @@ Public Class InsertarTarea
             End If
 
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

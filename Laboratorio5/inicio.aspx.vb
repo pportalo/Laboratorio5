@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
+Imports System.Security.Cryptography
 
 Partial Class inicio
     Inherits System.Web.UI.Page
@@ -11,12 +11,33 @@ Partial Class inicio
         sql = New SqlConnection("Data Source=laboratoriohads.database.windows.net;Initial Catalog=Lab;Persist Security Info=True;User ID=adminhads;Password=A1s2d3f4")
     End Sub
 
+    Function GetMd5Hash(ByVal md5Hash As MD5, ByVal input As String) As String
 
+        ' Convert the input string to a byte array and compute the hash.
+        Dim data As Byte() = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input))
+
+        ' Create a new Stringbuilder to collect the bytes
+        ' and create a string.
+        Dim sBuilder As New StringBuilder()
+
+        ' Loop through each byte of the hashed data 
+        ' and format each one as a hexadecimal string.
+        Dim i As Integer
+        For i = 0 To data.Length - 1
+            sBuilder.Append(data(i).ToString("x2"))
+        Next i
+
+        ' Return the hexadecimal string.
+        Return sBuilder.ToString()
+
+    End Function 'GetMd5Hash
 
     Function loguear() As Boolean
 
         Dim correo As String = txtUsuario.Text
-        Dim pass As String = txtPassword.Text
+
+        Dim md5Hash As MD5 = MD5.Create()
+        Dim pass As String = GetMd5Hash(md5Hash, txtPassword.Text)
 
         Dim da As New SqlDataAdapter("select * from usuarios where email='" & correo & "' and pass='" & pass & "'", sql)
         Dim ds As New Data.DataSet
@@ -46,9 +67,19 @@ Partial Class inicio
                 While (reader.Read)
                     Dim tipo As String = reader("tipo")
                     If (String.Equals(tipo, "A")) Then
-                        Response.Redirect("/Alumno.aspx")
+
+                        FormsAuthentication.SetAuthCookie("alumno", True)
+
+                        Response.Redirect("~/Alumno/Alumno.aspx")
+
                     Else
-                        Response.Redirect("/Profesor.aspx")
+                        If (String.Equals(txtUsuario.Text, "vadillo@ehu.es")) Then
+                            FormsAuthentication.SetAuthCookie("administrador", True)
+                        Else
+                            FormsAuthentication.SetAuthCookie("profesor", True)
+                        End If
+
+                        Response.Redirect("~/Profesor/Profesor.aspx")
 
                     End If
                 End While
@@ -69,18 +100,12 @@ Partial Class inicio
 
         If loguear() Then
 
-            Response.Redirect("/cambiarpassword.aspx?correo=" & correoUsuario)
+            Response.Redirect("/cambiarpassword.aspx?correo=" & txtUsuario.Text)
         Else
             lblError.Visible = True
         End If
 
     End Sub
 
-    Protected Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
 
-    End Sub
-
-    Protected Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
-
-    End Sub
 End Class

@@ -27,12 +27,11 @@
         </p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCambiarPassword" runat="server" Text="Cambiar Password" Width="175px" ValidateRequestMode="Enabled" Enabled="False" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </p>
+            <asp:Button ID="btnCambiarPassword" runat="server" Text="Cambiar Password" Width="175px" ValidateRequestMode="Enabled" />
+&nbsp;</p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnRegistro" runat="server" Text="Registro" Width="175px" ValidateRequestMode="Disabled" CausesValidation="False" Enabled="False" />
+            <asp:Button ID="btnRegistro" runat="server" Text="Registro" Width="175px" ValidateRequestMode="Disabled" CausesValidation="False" />
         </p>
     </form>
 </body>

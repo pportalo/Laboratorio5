@@ -29,11 +29,11 @@ Public Class ExportarTareasXML
             End If
 
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
 
 
-        Dim dirInfo As New DirectoryInfo(Server.MapPath("/"))
+        Dim dirInfo As New DirectoryInfo(Server.MapPath("../"))
 
         articleList.DataSource = dirInfo.GetFiles("*.xml")
         articleList.DataBind()
@@ -54,7 +54,7 @@ Public Class ExportarTareasXML
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-        Response.Redirect("Profesor.aspx")
+        Response.Redirect("../Profesor/Profesor.aspx")
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -69,13 +69,13 @@ Public Class ExportarTareasXML
 
 
             'se sobreescribe 
-            ds.WriteXml(Server.MapPath(lista.SelectedValue & ".xml"))
+            ds.WriteXml(Server.MapPath("../" & lista.SelectedValue & ".xml"))
             Errores.Text = "XML Exportado."
         Catch ex As Exception
             Errores.Text = "Error al exportar el XML. "
         End Try
 
-        Dim dirInfo As New DirectoryInfo(Server.MapPath("/"))
+        Dim dirInfo As New DirectoryInfo(Server.MapPath("../"))
 
         articleList.DataSource = dirInfo.GetFiles("*.xml")
         articleList.DataBind()

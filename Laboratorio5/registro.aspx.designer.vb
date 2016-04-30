@@ -77,24 +77,6 @@ Partial Public Class registro
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''Control txtApellidos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtApellidos As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control RequiredFieldValidator3.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
     '''Control txtDNI.
     '''</summary>
     '''<remarks>
@@ -167,22 +149,22 @@ Partial Public Class registro
     Protected WithEvents CompareValidator1 As Global.System.Web.UI.WebControls.CompareValidator
     
     '''<summary>
-    '''Control ddlPregunta.
+    '''Control txtPregunta.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlPregunta As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtPregunta As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control SqlDataSource1.
+    '''Control RequiredFieldValidator8.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''Control txtRespuesta.

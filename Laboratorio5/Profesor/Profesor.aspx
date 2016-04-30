@@ -23,7 +23,7 @@
         <asp:Button ID="Button2" runat="server" Text="Importar Tareas XML" />
         <br />
         <br />
-        <asp:Button ID="Button3" runat="server" Text="Exportar Tareas XML" />
+        <asp:Button ID="Button3" runat="server" Text="Exportar Tareas XML" Visible="False" />
         <br />
         <br />
         <br />

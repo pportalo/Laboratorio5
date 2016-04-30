@@ -42,7 +42,7 @@ Public Class ImportarTareasXML
             End If
 
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
     End Sub
 

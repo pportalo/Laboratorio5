@@ -29,7 +29,7 @@ Public Class InstanciarTarea
             GridView1.DataBind()
             Session("dataAdapter") = da
         Else
-            Response.Redirect("inicio.aspx")
+            Response.Redirect("../inicio.aspx")
         End If
     End Sub
 
@@ -67,7 +67,7 @@ Public Class InstanciarTarea
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("/TareasAlumno.aspx")
+        Response.Redirect("TareasAlumno.aspx")
     End Sub
 
 End Class
