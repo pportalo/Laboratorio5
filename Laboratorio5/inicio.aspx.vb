@@ -11,6 +11,37 @@ Partial Class inicio
         sql = New SqlConnection("Data Source=laboratoriohads.database.windows.net;Initial Catalog=Lab;Persist Security Info=True;User ID=adminhads;Password=A1s2d3f4")
     End Sub
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        If Session("usuario") IsNot Nothing Then
+            'MsgBox("Ya hay una sesion abierta")
+            Dim command As New SqlCommand("Select * from Usuarios where email='" & Session("usuario") & "';", sql)
+            Dim reader As SqlDataReader
+            Try
+                sql.Open()
+                reader = command.ExecuteReader()
+                While (reader.Read)
+                    Dim tipo As String = reader("tipo")
+                    If (String.Equals(tipo, "A")) Then
+
+                        Response.Redirect("~/Alumno/Alumno.aspx")
+
+                    Else
+
+                        Response.Redirect("~/Profesor/Profesor.aspx")
+
+                    End If
+                End While
+                reader.Close()
+            Catch ex As Exception
+                'MsgBox("Ha habido errores!")
+            End Try
+            sql.Close()
+
+        End If
+
+    End Sub
+
     Function GetMd5Hash(ByVal md5Hash As MD5, ByVal input As String) As String
 
         ' Convert the input string to a byte array and compute the hash.
@@ -70,6 +101,8 @@ Partial Class inicio
 
                         FormsAuthentication.SetAuthCookie("alumno", True)
 
+                        Application("cuantosalumnos") += 1
+                        Application("listaalumnos").Add(txtUsuario.Text, txtUsuario.Text)
                         Response.Redirect("~/Alumno/Alumno.aspx")
 
                     Else
@@ -79,6 +112,8 @@ Partial Class inicio
                             FormsAuthentication.SetAuthCookie("profesor", True)
                         End If
 
+                        Application("cuantosprofesores") += 1
+                        Application("listaprofesores").Add(txtUsuario.Text, txtUsuario.Text)
                         Response.Redirect("~/Profesor/Profesor.aspx")
 
                     End If
@@ -91,7 +126,6 @@ Partial Class inicio
         Else
             lblError.Visible = True
         End If
-
     End Sub
     Protected Sub btnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
         Response.Redirect("registro.aspx")
@@ -106,6 +140,4 @@ Partial Class inicio
         End If
 
     End Sub
-
-
 End Class

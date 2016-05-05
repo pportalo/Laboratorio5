@@ -17,7 +17,12 @@
     End Sub
 
     Protected Sub cerrar_Click(sender As Object, e As EventArgs) Handles cerrar.Click
+
+        Application("cuantosprofesores") -= 1
+        Application("listaprofesores").Remove(Session("usuario"))
+
         Session("usuario") = Nothing
+
         Response.Redirect("../inicio.aspx")
     End Sub
 
@@ -29,5 +34,10 @@
     Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         Response.Redirect("/Administrador/ExportarTareasXML.aspx")
+    End Sub
+
+    Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+        Response.Redirect("/Online.aspx")
     End Sub
 End Class

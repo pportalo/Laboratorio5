@@ -21,6 +21,7 @@
         <asp:Button ID="boton" runat="server" Text="Tareas Alumno" />
         <br />
         <br />
+        <asp:Button ID="Button1" runat="server" Height="25px" Text="Ver Usuarios Online" />
         <br />
         <br />
         <br />

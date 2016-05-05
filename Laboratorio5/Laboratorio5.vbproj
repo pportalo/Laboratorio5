@@ -45,6 +45,10 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -103,6 +107,8 @@
     <Content Include="cambiarpassword.aspx" />
     <Content Include="confirmar.aspx" />
     <Content Include="Administrador\ExportarTareasXML.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Online.aspx" />
     <Content Include="Profesor\ImportarTareasXML.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="Profesor\InsertarTarea.aspx" />
@@ -141,6 +147,16 @@
     </Compile>
     <Compile Include="Administrador\ExportarTareasXML.aspx.vb">
       <DependentUpon>ExportarTareasXML.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Online.aspx.designer.vb">
+      <DependentUpon>Online.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Online.aspx.vb">
+      <DependentUpon>Online.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Profesor\ImportarTareasXML.aspx.designer.vb">
