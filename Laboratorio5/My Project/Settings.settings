@@ -5,5 +5,8 @@
     <Setting Name="Laboratorio5_es_hol_sw14_Matriculas" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php</Value>
     </Setting>
+    <Setting Name="Laboratorio5_net_azurewebsites_hadspportalo_Coordinacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hadspportalo.azurewebsites.net/Coordinacion.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

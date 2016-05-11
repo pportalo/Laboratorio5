@@ -1,6 +1,7 @@
 ﻿Public Class Coordinacion1
     Inherits System.Web.UI.Page
-    Dim LaMedia As New CoorMedia.CoordinacionSoapClient
+    'Dim LaMedia As New CoorMedia.CoordinacionSoapClient
+    Dim LaMedia As New net.azurewebsites.hadspportalo.Coordinacion
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Session("usuario") IsNot Nothing Then
 

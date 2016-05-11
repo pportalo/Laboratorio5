@@ -63,6 +63,16 @@ Namespace My
                 Return CType(Me("Laboratorio5_es_hol_sw14_Matriculas"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://hadspportalo.azurewebsites.net/Coordinacion.asmx")>  _
+        Public ReadOnly Property Laboratorio5_net_azurewebsites_hadspportalo_Coordinacion() As String
+            Get
+                Return CType(Me("Laboratorio5_net_azurewebsites_hadspportalo_Coordinacion"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

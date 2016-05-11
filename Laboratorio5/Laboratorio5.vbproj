@@ -142,6 +142,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <None Include="Web References\net.azurewebsites.hadspportalo\Coordinacion.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -295,6 +296,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\net.azurewebsites.hadspportalo\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -326,6 +332,11 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
+    <None Include="Web References\net.azurewebsites.hadspportalo\Coordinacion.wsdl" />
+    <Content Include="Web References\net.azurewebsites.hadspportalo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -341,6 +352,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://hadspportalo.azurewebsites.net/Coordinacion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.azurewebsites.hadspportalo\</RelPath>
+      <UpdateFromURL>http://hadspportalo.azurewebsites.net/Coordinacion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Laboratorio5_net_azurewebsites_hadspportalo_Coordinacion</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\es.hol.sw14\</RelPath>
