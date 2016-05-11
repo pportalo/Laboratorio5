@@ -26,6 +26,9 @@
         <asp:Button ID="Button3" runat="server" Text="Exportar Tareas XML" Visible="False" />
         <br />
         <br />
+        <asp:Button ID="Button5" runat="server" Text="Coordinación"  Visible="False" />
+        <br />
+        <br />
         <asp:Button ID="Button4" runat="server" Height="25px" Text="Ver Usuarios Online" />
         <br />
         <br />

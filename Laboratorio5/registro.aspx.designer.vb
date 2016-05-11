@@ -59,6 +59,15 @@ Partial Public Class registro
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control lblNoMatriculado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblNoMatriculado As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control txtNombre.
     '''</summary>
     '''<remarks>

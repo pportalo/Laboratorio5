@@ -29,6 +29,9 @@
 
         &nbsp;&nbsp;
         <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="El correo insertado existe" Visible="False"></asp:Label>
+        
+        &nbsp;&nbsp;
+        <asp:Label ID="lblNoMatriculado" runat="server" ForeColor="Red" Text="El correo insertado no está matriculado" Visible="False"></asp:Label>
 
 
         <p>

@@ -11,6 +11,7 @@ Partial Class registro
     Dim da As New SqlDataAdapter
     Dim ds As New DataSet
 
+    Dim Matriculado As New es.hol.sw14.Matriculas
 
     Sub New()
         sql = New SqlConnection("Data Source=laboratoriohads.database.windows.net;Initial Catalog=Lab;Persist Security Info=True;User ID=adminhads;Password=A1s2d3f4")
@@ -48,61 +49,66 @@ Partial Class registro
             lblError.Visible = True
         Else
             lblError.Visible = False
+            If (Matriculado.comprobar(txtCorreo.Text).Equals("SI")) Then
+
+                'Dim clave As Long = generarClave()
+
+                ' Dim da As New SqlDataAdapter("insert into Usuarios values('" & txtCorreo.Text & "', '" & txtNombre.Text & "','" & txtPregunta.Text & "','" & txtRespuesta.Text & "','" & txtDNI.Text & ", '" & Boolean.TrueString & "','1','A','" & txtPassword.Text & ")", sql)
+                ' Dim ds As New Data.DataSet
+                ' da.Fill(ds)
+                'MsgBox("Usuario insertado")
+
+                'Dim envcorreo As New Laboratorio5.EnviarCorreo
+                'envcorreo.enviarCorreo(clave, txtCorreo.Text)
+
+                da = New SqlDataAdapter("SELECT * FROM Usuarios", sql)
+                Dim builder As New SqlCommandBuilder(da)
+                da.Fill(ds, "Usuarios")
 
 
-
-            'Dim clave As Long = generarClave()
-
-            ' Dim da As New SqlDataAdapter("insert into Usuarios values('" & txtCorreo.Text & "', '" & txtNombre.Text & "','" & txtPregunta.Text & "','" & txtRespuesta.Text & "','" & txtDNI.Text & ", '" & Boolean.TrueString & "','1','A','" & txtPassword.Text & ")", sql)
-            ' Dim ds As New Data.DataSet
-            ' da.Fill(ds)
-            'MsgBox("Usuario insertado")
-
-            'Dim envcorreo As New Laboratorio5.EnviarCorreo
-            'envcorreo.enviarCorreo(clave, txtCorreo.Text)
-
-            da = New SqlDataAdapter("SELECT * FROM Usuarios", sql)
-            Dim builder As New SqlCommandBuilder(da)
-            da.Fill(ds, "Usuarios")
+                Dim md5Hash As MD5 = MD5.Create()
+                Dim pass As String = GetMd5Hash(md5Hash, txtPassword.Text)
 
 
-            Dim md5Hash As MD5 = MD5.Create()
-            Dim pass As String = GetMd5Hash(md5Hash, txtPassword.Text)
-
-
-            MisTablas = ds.Tables("Usuarios")
-            Dim dataRow As DataRow
-            dataRow = MisTablas.NewRow()
-            dataRow("email") = txtCorreo.Text
-            dataRow("nombre") = txtNombre.Text
-            dataRow("pregunta") = txtPregunta.Text
-            dataRow("respuesta") = txtRespuesta.Text
-            dataRow("dni") = txtDNI.Text
-            dataRow("confirmado") = True
-            dataRow("grupo") = "1"
-            dataRow("tipo") = "A"
-            dataRow("pass") = pass
-            Try
-                MisTablas.Rows.Add(dataRow)
-
-
+                MisTablas = ds.Tables("Usuarios")
+                Dim dataRow As DataRow
+                dataRow = MisTablas.NewRow()
+                dataRow("email") = txtCorreo.Text
+                dataRow("nombre") = txtNombre.Text
+                dataRow("pregunta") = txtPregunta.Text
+                dataRow("respuesta") = txtRespuesta.Text
+                dataRow("dni") = txtDNI.Text
+                dataRow("confirmado") = True
+                dataRow("grupo") = "1"
+                dataRow("tipo") = "A"
+                dataRow("pass") = pass
                 Try
+                    MisTablas.Rows.Add(dataRow)
 
-                    da.Update(ds, "Usuarios")
-                    ds.AcceptChanges()
 
-                    'Errores.Text = "¡Tarea insertada correctamente!"
+                    Try
+
+                        da.Update(ds, "Usuarios")
+                        ds.AcceptChanges()
+
+                        'Errores.Text = "¡Tarea insertada correctamente!"
+                    Catch ex As Exception
+                        'Errores.Text = "¡La tarea ya está insertada!"
+
+                    End Try
                 Catch ex As Exception
-                    'Errores.Text = "¡La tarea ya está insertada!"
 
+                    'Errores.Text = "Las horas deben tener un formato correcto!"
                 End Try
-            Catch ex As Exception
-
-                'Errores.Text = "Las horas deben tener un formato correcto!"
-            End Try
 
 
-            Response.Redirect("/inicio.aspx")
+                Response.Redirect("/inicio.aspx")
+            Else
+                lblNoMatriculado.Visible = True
+            End If
+
+
+
 
         End If
 

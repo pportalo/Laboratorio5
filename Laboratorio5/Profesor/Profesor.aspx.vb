@@ -5,6 +5,7 @@
         If Session("usuario") IsNot Nothing Then
             If (Equals(Session("usuario"), "vadillo@ehu.es")) Then
                 Button3.Visible = True
+                Button5.Visible = True
             End If
         Else
                 Response.Redirect("../inicio.aspx")
@@ -39,5 +40,9 @@
     Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Response.Redirect("/Online.aspx")
+    End Sub
+
+    Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Response.Redirect("Coordinacion.aspx")
     End Sub
 End Class
